@@ -1,7 +1,12 @@
 const employeeCtrl = {};
 
-employeeCtrl.getEmployees = (req, res) => {
-    res.send('get Employees');
+// Referencia el modelo de datos
+const Employee = require('../models/Employee');
+
+employeeCtrl.getEmployees = async(req, res) => {
+    // Obtener todos los Empleados
+    const listaEmpleadaos = await Employee.find(); //Es un metodo asincrono
+    res.json(listaEmpleadaos);
 };
 employeeCtrl.createEmployee = (req, res) => {
     res.send('create Employee');
