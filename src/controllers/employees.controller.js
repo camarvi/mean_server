@@ -9,6 +9,7 @@ employeeCtrl.getEmployees = async(req, res) => {
     res.json(listaEmpleadaos);
 };
 employeeCtrl.createEmployee = (req, res) => {
+    console.log(req.body);
     res.send('create Employee');
 };
 employeeCtrl.getEmployee = (req, res) => {
